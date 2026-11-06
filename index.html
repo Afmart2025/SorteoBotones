@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Juego interactivo 'Elige tu destino': haz clic en un botón y descubre tu suerte.">
+  <title>Elige tu destino</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-decorations" aria-hidden="true">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+
+  <main class="card">
+    <header class="header">
+      <div class="badge">Juego de azar</div>
+      <h1 class="title">Elige tu destino</h1>
+      <p class="subtitle">Pulsa uno de los dos botones para descubrir si la suerte está de tu lado.</p>
+    </header>
+
+    <section class="game-area">
+      <!-- Selector de botones -->
+      <div id="choice-container" class="choice-container">
+        <button id="btn-red" class="btn btn-choice btn-red" type="button" aria-label="Elegir botón rojo">
+          <span class="btn-glow"></span>
+          <span class="btn-icon">🔴</span>
+          <span class="btn-label">Botón Rojo</span>
+        </button>
+
+        <button id="btn-blue" class="btn btn-choice btn-blue" type="button" aria-label="Elegir botón azul">
+          <span class="btn-glow"></span>
+          <span class="btn-icon">🔵</span>
+          <span class="btn-label">Botón Azul</span>
+        </button>
+      </div>
+
+      <!-- Mensaje de resultado -->
+      <div id="result-container" class="result-container hidden" aria-live="polite">
+        <div id="result-icon" class="result-icon" aria-hidden="true">🎉</div>
+        <h2 id="result-message" class="result-message">Has ganado</h2>
+        <p id="result-detail" class="result-detail">Has elegido el botón rojo y has tenido suerte.</p>
+
+        <button id="btn-restart" class="btn btn-restart" type="button">
+          <span class="restart-icon">↻</span>
+          <span>Volver a jugar</span>
+        </button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="score-board">
+        <div class="score-item score-wins">
+          <span class="score-label">Victorias</span>
+          <span id="score-wins-count" class="score-count">0</span>
+        </div>
+        <div class="score-divider"></div>
+        <div class="score-item score-losses">
+          <span class="score-label">Derrotas</span>
+          <span id="score-losses-count" class="score-count">0</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
